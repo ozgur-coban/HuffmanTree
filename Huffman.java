@@ -42,29 +42,29 @@ public class Huffman <T extends Comparable>{
 
 
 
-    // public void printCode(){
-    //     printCode(root, "");
-    // }
+    public void printCode(){
+        printCode(root, "");
+    }
 
-    // private  String printCode(TNode<T> root, String Code) 
-    // { 
+    private  String printCode(TNode<T> root, String Code) 
+    { 
 
         
-    //     if (root.left == null && root.right == null) 
-    //         { 
+        if (root.left == null && root.right == null) 
+            { 
 
             
-    //         System.out.println(root.ch + " " + Code); 
+            System.out.println(root.ch + " " + Code); 
 
-    //         return Code ; 
-    //     } 
+            return Code ; 
+        } 
 
         
-    //     printCode(root.left, Code + "0"); 
-    //     printCode(root.right, Code + "1"); 
+        printCode(root.left, Code + "0"); 
+        printCode(root.right, Code + "1"); 
         
-    //     return "";
-    // } 
+        return "";
+    } 
 
 
     public void test(){
@@ -85,10 +85,6 @@ public class Huffman <T extends Comparable>{
 
 
 
-    public void testforcode(){
-        //System.out.println(printCode2(root, "",""));
-        System.out.println(printCode2());
-    }
 
 
 
@@ -122,7 +118,7 @@ public class Huffman <T extends Comparable>{
         encoded=encoded+ printCode2(root.right, s + "1", "").repeat(root.right.frequency);
         else
         encoded=encoded+ printCode2(root.right, s + "1", "");
-        //System.out.println(encoded);
+        
         return encoded;
     }
 
@@ -154,10 +150,10 @@ public class Huffman <T extends Comparable>{
     public void preOrder(){
         preOrder(root);
     }
-    public String preOrder(TNode<T> root ){ // bu rootlar currentroot tabiki
+    public String preOrder(TNode<T> root ){ 
         String s="";
         if(root!=null){
-            //System.out.println(root);
+            
             preOrder(root.left);
             s=s+"0";
             
@@ -189,59 +185,21 @@ public class Huffman <T extends Comparable>{
 
     }
 
-    // public  String encode(String text, TNode<T> root) {
-    //     String sb = "";
-    //     for (int i = 0; i < text.length(); i++) {
-    //         char c = text.charAt(i);
-    //         TNode<T> node = root;
-    //         while (node.left != null && node.right != null) {
-    //             if (node.ch.charAt(0) == c) {
-    //                 sb += "0";
-    //                 break;
-    //             } else if (node.left.value.charAt(0) == c) {
-    //                 sb += "0";
-    //                 node = node.left;
-    //             } else {
-    //                 sb += "1";
-    //                 node = node.right;
-    //             }
-    //         }
-    //     }
-    //     return sb;
-    // }
 
 
 
-    // public void inOrder(){
-    //     inOrder(root);
-    // }
-    // public void inOrder(TNode<T> root){ // bu rootlar currentroot tabiki
-    //     if(root!=null){
-    //         inOrder(root.left);
-    //         System.out.println(root);
-    //         inOrder(root.right);
-    //     }
-    // }
+    public void inOrder(){
+        inOrder(root);
+    }
+    public void inOrder(TNode<T> root){ // bu rootlar currentroot tabiki
+        if(root!=null){
+            inOrder(root.left);
+            System.out.println(root);
+            inOrder(root.right);
+        }
+    }
 
 
-    //     public boolean testforb(int number){
-    //         int s = 0;
-    //         TNode<T> Iterator=root;
-    //         while(Iterator!=null && Iterator.isLeaf()!=true){
-    //         if(s==0){
-    //             Iterator=Iterator.left;
-    //         }
-    //         if(s==1){
-    //             Iterator=Iterator.right;
-    //         }
-    //     }
-    //     if(Iterator.isLeaf()==true){
-    //         Iterator=root;
-    //     }
-    //     else{
-    //         return false;
-    //     }
-    // }
 
 
 
